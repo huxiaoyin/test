@@ -28,6 +28,7 @@ public class StudentController {
     }
 
     @RequestMapping("/insertTest")
+    @ResponseBody
     public String insertTest() {
         List<Student> students = new ArrayList<>();
 
