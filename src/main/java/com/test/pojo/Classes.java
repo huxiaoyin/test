@@ -1,5 +1,8 @@
-package com.pojo;
+package com.test.pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Classes {
     private Integer cid;
 

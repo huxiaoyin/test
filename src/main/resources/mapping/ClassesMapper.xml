@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dao.ClassesMapper" >
-  <resultMap id="BaseResultMap" type="com.pojo.Classes" >
+<mapper namespace="com.test.dao.ClassesMapper" >
+  <resultMap id="BaseResultMap" type="com.test.pojo.Classes" >
     <constructor >
       <idArg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="cname" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -20,11 +20,11 @@
     delete from classes
     where cid = #{cid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.pojo.Classes" >
+  <insert id="insert" parameterType="com.test.pojo.Classes" >
     insert into classes (cid, cname)
     values (#{cid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.pojo.Classes" >
+  <insert id="insertSelective" parameterType="com.test.pojo.Classes" >
     insert into classes
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="cid != null" >
@@ -43,7 +43,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.pojo.Classes" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.test.pojo.Classes" >
     update classes
     <set >
       <if test="cname != null" >
@@ -52,7 +52,7 @@
     </set>
     where cid = #{cid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pojo.Classes" >
+  <update id="updateByPrimaryKey" parameterType="com.test.pojo.Classes" >
     update classes
     set cname = #{cname,jdbcType=VARCHAR}
     where cid = #{cid,jdbcType=INTEGER}

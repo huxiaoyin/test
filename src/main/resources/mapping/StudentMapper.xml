@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dao.StudentMapper">
-    <resultMap id="BaseResultMap" type="com.pojo.Student">
+<mapper namespace="com.test.dao.StudentMapper">
+    <resultMap id="BaseResultMap" type="com.test.pojo.Student">
         <constructor>
             <idArg column="sid" jdbcType="INTEGER" javaType="java.lang.Integer"/>
             <arg column="sname" jdbcType="VARCHAR" javaType="java.lang.String"/>
@@ -21,7 +21,7 @@
         delete from student
         where sid = #{sid,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.pojo.Student">
+    <insert id="insert" parameterType="com.test.pojo.Student">
         insert into student (sid, sname, cid
         )
         values (#{sid,jdbcType=INTEGER}, #{sname,jdbcType=VARCHAR}, #{cid,jdbcType=INTEGER}
@@ -34,7 +34,7 @@
         </foreach>
 
     </insert>
-    <insert id="insertSelective" parameterType="com.pojo.Student">
+    <insert id="insertSelective" parameterType="com.test.pojo.Student">
         insert into student
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="sid != null">
@@ -59,7 +59,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.pojo.Student">
+    <update id="updateByPrimaryKeySelective" parameterType="com.test.pojo.Student">
         update student
         <set>
             <if test="sname != null">
@@ -71,7 +71,7 @@
         </set>
         where sid = #{sid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.pojo.Student">
+    <update id="updateByPrimaryKey" parameterType="com.test.pojo.Student">
     update student
     set sname = #{sname,jdbcType=VARCHAR},
       cid = #{cid,jdbcType=INTEGER}

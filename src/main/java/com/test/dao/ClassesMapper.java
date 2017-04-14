@@ -1,6 +1,6 @@
-package com.dao;
+package com.test.dao;
 
-import com.pojo.Classes;
+import com.test.pojo.Classes;
 
 public interface ClassesMapper {
     int deleteByPrimaryKey(Integer cid);
